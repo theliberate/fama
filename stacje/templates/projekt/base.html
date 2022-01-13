@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<title>FAMA</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="{% static 'projekt/mainpage.css' %}">
+	</head>
+	<body>
+		<nav class="navbar-expand-lg navbar-light bg-dark">
+			<div class="kolorystyka">
+				<a href="/mainpage/" class="kolorystyka">FAMA</a>
+			</div>
+		</nav>
+		{% block content %}
+		{% endblock %}
+		<footer class="bg-light text-center text-lg-start">
+			<!-- Copyright -->
+			<div class="text-center p-3">
+				{% if user.is_authenticated %}
+				Jesteś zalogowany/a jako {{ user.username }}. <a href="{% url 'logout' %}">Wyloguj się</a><br>
+				{% else %}
+				<a href="/login/">Zaloguj się</a><br>
+				{% endif %}
+				Kontakt: <br> +48 72 579 45 16 <br> kontakt@fama.pl
+				<br><br>
+				© 2021 Copyright:
+				<a class="text-dark" href="/">Fama</a>
+			</div>
+			<!-- Copyright -->
+			</footer>
+	</body>
+</html>

@@ -1,0 +1,125 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+html{
+    background: url("/static/projekt/images/tlo.jpg") no-repeat fixed;
+    background-size: 100%;
+}
+
+.main-head{
+    height: 150px;
+    background: #FFF;
+   
+}
+
+#logo {
+    font-family: "Bison", sans-serif;
+    font-size: 100px;
+}
+
+.btn-1 {
+    font-family: "Lato Hairline", monospace;
+    background: #b19b6c;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 1.5rem;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 10px;
+    width: auto;
+    position: relative;
+
+    &::after {
+        content: "\f054";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 400;
+        position: absolute;
+        left: 85%;
+        top: 31%;
+        right: 5%;
+        bottom: 0;
+        opacity: 0;
+
+    }
+
+    &:hover {
+        background: #2b2bff;
+        transition: all 0.5s;
+        border-radius: 10px;
+        box-shadow: 0px 6px 15px #0000ff61;
+        padding: 1.5rem 3.5rem 1.5rem 1.5rem;
+
+        &::after {
+            opacity: 1;
+            transition: all 0.5s;
+
+        }
+    }
+
+
+}
+
+.sidenav {
+    height: 100%;
+    background-color: #000;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.main {
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 80%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text{
+    margin-top: 20%;
+    padding: 60px;
+    color: #fff;
+}
+
+.login-main-text h2{
+    font-weight: 300;
+}
+
+.btn-black{
+    background-color: #000 !important;
+    color: #fff;
+}

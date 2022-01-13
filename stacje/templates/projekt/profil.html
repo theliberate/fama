@@ -1,0 +1,20 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<div style="margin-top: 20px; margin-left: 20px; margin-right: 20px;">
+<div style="font-family: Bison; font-size:40px;">Nazwa</div> {{ User.nazwa }}
+<br>
+<div style="font-family: Bison; font-size:40px;">Username</div> {{ User.username }}
+<br>
+<div style="font-family: Bison; font-size:40px;">Opis</div>
+{% if User.bio %}
+{{ User.bio|linebreaks }}
+{% else %}
+<p>Brak opisu.</p>
+{% endif %}
+{% if user.is_authenticated and user.username == User.username or user.is_superuser %}
+<a href="/user/{{ User.id }}/{{ User.url }}/edytuj/" class="btn btn-dark">Edytuj</a><br><br><a href="/user/{{ User.id }}/{{ User.url }}/usun/" class="btn btn-danger">Usuń konto</a>
+{% endif %}
+</div>
+<br>
+{% endblock %}

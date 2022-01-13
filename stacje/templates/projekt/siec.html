@@ -1,0 +1,21 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<center>
+<h2 style="font-size:40px; font-family: Bison;">{{ Siec.nazwa }}</h2>
+<article style="text-align: justify; margin-left: 20px; margin-right: 20px;">
+    Data założenia: {{ Siec.dataZalozenia }} <br>
+    Data zakończenia działalności: {% if Siec.dataZakonczenia is None %} N/A {% else %} Siec.dataZakonczenia{% endif %}<br>
+    Prezes: {% if Siec.prezes is None %} N/A {% else %} {{ Siec.prezes }}{% endif %}<br>
+    {% if Siec.adresSiedziby is not None %}
+    Adres siedziby:<br>
+    ul. {{ Siec.adresSiedziby.ulica }} {{ Siec.adresSiedziby.numerBudynku }} {% if Siec.adresSiedziby.numerLokalu is not None %}/{{ Siec.adresSiedziby.numerLokalu }} {% endif %}<br>
+    {{ Siec.adresSiedziby.kodPocztowy }} {{ Siec.adresSiedziby.miasto }} {% endif %}
+</article>
+{% if user.is_superuser %}
+<br>
+<a href="/sieci/{{ Siec.id }}/{{ Siec.url }}/edytuj/" class="btn btn-dark">Edytuj</a> <a href="/sieci/{{ Siec.id }}/{{ Siec.url }}/usun/" class="btn btn-dark">Usuń</a>
+{% endif %}
+</center>
+<br>
+{% endblock %}

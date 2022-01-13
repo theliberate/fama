@@ -1,0 +1,16 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<center>
+<h2 style="font-size:40px;">{{ Artykul.tytul }}</h2>
+<p>Autor: <a href="/user/{{ Artykul.autor.id }}/{{ Artykul.autor.url }}/" style="color:black;">{{ Artykul.autor.nazwa }}</a></p>
+<article style="text-align: justify; margin-left: 20px; margin-right: 20px;">
+    {{ Artykul.tresc|linebreaks }}
+</article>
+{% if user.is_authenticated and user.username == Artykul.autor.username or user.is_superuser %}
+<br>
+<a href="/artykuly/{{ Artykul.id }}/edytuj/" class="btn btn-dark">Edytuj</a> <a href="/artykuly/{{ Artykul.id }}/usun/" class="btn btn-dark">Usuń</a>
+{% endif %}
+</center>
+<br>
+{% endblock %}

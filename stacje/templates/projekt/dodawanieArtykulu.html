@@ -1,0 +1,14 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<center>
+<br><br>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-dark">Opublikuj</button>
+</form>
+<br><br>
+</center>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<center>
+<br>
+{% for kolejna_stacja in Stacja %}
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ kolejna_stacja.nazwa }}</h5>
+              {% if kolejna_stacja.opis %}
+              <p class="card-text">{{ kolejna_stacja.opis|truncatewords:50 }}</p>
+              {% else %}
+              <p>Brak opisu.</p>
+              {% endif %}
+              <a href="/stacje/{{ kolejna_stacja.id }}/{{ kolejna_stacja.url }}/" class="btn btn-dark">Zobacz szczegóły</a>
+              <br>
+            </div>
+          </div>
+        {% endfor %}
+{% if user.is_superuser %}
+<a href="/stacje/dodaj/" class="btn btn-dark">Dodaj stację</a>
+{% endif %}
+</center>
+<br>
+{% endblock %}

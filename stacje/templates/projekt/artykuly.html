@@ -1,0 +1,37 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<center>
+    <br><br>
+    <h2 style="font-family: Bison; font-size:40px;">NAJNOWSZE WPISY</h2>
+</center>
+    {% if artykuly %}
+    <ul>
+        {% for artykul in artykuly %}
+        <div class="card">
+            {% if artykul.wyroznienie %}
+            <div class="card-header" style="background-color: rgb(255, 255, 162);">
+            WYRÓŻNIONY ARTYKUŁ
+            </div>
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{ artykul.tytul }}</h5>
+              <p class="card-text">{{ artykul.tresc|truncatewords:100 }}</p>
+              <a href="/artykuly/{{ artykul.id }}/{{ artykul.url }}" class="btn btn-dark">Czytaj dalej</a>
+              <br>
+            </div>
+          </div>
+        {% endfor %}
+        </ul>
+{% else %}
+<center>
+    <p>Brak artykułów.</p>
+</center>
+{% endif %}
+{% if user.is_authenticated %}
+<center>
+<a href="/artykuly/dodaj/" class="btn btn-dark">Dodaj artykuł</a>
+</center>
+{% endif %}
+<br><br>
+{% endblock %}

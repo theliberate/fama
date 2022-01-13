@@ -1,0 +1,17 @@
+{% extends 'projekt/autoryzacjabaza.html' %}
+
+{% block title %}Zarejestruj się{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+<center>
+  <h2 style="font-family: Bison; font-size:60px;">Rejestracja</h2>
+  <br>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+    {{ form|crispy }}
+    </div>
+    <button type="submit" class="btn btn-dark" style="background-color: rgb(0, 0, 0);">Załóż konto</button>
+  </form>
+</center>
+{% endblock %}

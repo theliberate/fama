@@ -1,0 +1,42 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<center>
+<div class="card mb-3">
+  <img class="card-img-top" src="../static/projekt/images/historia.jpg" alt="Zespół Polskiego Radia">
+    <div class="card-body">
+      <h5 class="card-title">Historia radia w Polsce</h5>
+      <p class="card-text">Wszystko o korzeniach sieci radiowej w naszym kraju.</p>
+      <a href="/historia/" class="btn btn-dark">Czytaj</a>
+    </div>
+</div>
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">Artykuły użytkowników</h5>
+    <p class="card-text">Opiniotwórcze, informacyjne, rozrywkowe.</p>
+    <a href="/artykuly/" class="btn btn-dark">Pokaż artykuły</a>
+  </div>
+</div>
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">Baza stacji radiowych</h5>
+    <p class="card-text">Wszystkie stacje radiowe dostępne w Polsce.</p>
+    <a href="/stacje/" class="btn btn-dark">Przejdź do bazy stacji</a>
+  </div>
+</div>
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">Baza sieci radiowych</h5>
+    <p class="card-text">Nie każda stacja należy do sieci, ale każda sieć posiada stacje.</p>
+    <a href="/sieci/" class="btn btn-dark">Przejdź do bazy sieci</a>
+  </div>
+</div>
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">Baza spółek mediowych</h5>
+    <p class="card-text">Każda z prezesem na czele.</p>
+    <a href="/spolki/" class="btn btn-dark">Przejdź do bazy spółek</a>
+  </div>
+</div>
+</center>
+{% endblock %}

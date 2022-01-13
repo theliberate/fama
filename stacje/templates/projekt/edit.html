@@ -1,0 +1,17 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<form method="post" action="{% url 'edycjaUzytkownika' request.user.pk %}" enctype="multipart/form-data"  class="needs-validation" novalidate>
+    {% csrf_token %}
+    <div class="form-group">
+        {% with field=form.nazwa %}{% include "account/form_field.html" %}{% endwith %}
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {% with field=form.email %}{% include "account/form_field.html" %}{% endwith %}
+        </div>
+        <div class="form-group col-md-6">
+            {% with field=form.username %}{% include "account/form_field.html" %}{% endwith %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<center>
+<h2 style="font-size:40px; font-family: Bison;">{{ Spolka.nazwa }}</h2>
+<article style="text-align: justify; margin-left: 20px; margin-right: 20px;">
+    Data założenia: {{ Spolka.dataZalozenia }} <br>
+    Data zakończenia działalności: {% if Spolka.dataZakonczenia is None %} N/A {% else %} Spolka.dataZakonczenia{% endif %}<br>
+    Prezes: {% if Spolka.prezes is None %} N/A {% else %} {{ Spolka.prezes }}{% endif %}<br>
+    {% if Spolka.adresSiedziby is not None %}
+    Adres siedziby:<br>
+    ul. {{ Spolka.adresSiedziby.ulica }} {{ Spolka.adresSiedziby.numerBudynku }} {% if Spolka.adresSiedziby.numerLokalu is not None %}/{{ Spolka.adresSiedziby.numerLokalu }} {% endif %}<br>
+    {{ Spolka.adresSiedziby.kodPocztowy }} {{ Spolka.adresSiedziby.miasto }} {% endif %}
+</article>
+{% if user.is_superuser %}
+<br>
+<a href="/spolki/{{ Spolka.id }}/{{ Spolka.url }}/edytuj/" class="btn btn-dark">Edytuj</a> <a href="/spolki/{{ Spolka.id }}/{{ Spolka.url }}/usun/" class="btn btn-dark">Usuń</a>
+{% endif %}
+</center>
+<br>
+{% endblock %}

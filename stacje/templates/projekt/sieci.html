@@ -1,0 +1,21 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<center>
+<br>
+{% for kolejna_siec in Siec %}
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ kolejna_siec.nazwa }}</h5>
+              <a href="/sieci/{{ kolejna_siec.id }}/{{ kolejna_siec.url }}/" class="btn btn-dark">Zobacz szczegóły</a>
+              <br>
+            </div>
+          </div>
+        {% endfor %}
+{% if user.is_superuser %}
+<br>
+<a href="/sieci/dodaj/" class="btn btn-dark">Dodaj sieć</a>
+{% endif %}
+</center>
+<br>
+{% endblock %}

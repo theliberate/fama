@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+<title>FAMA</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'projekt/login.css' %}">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<div class="sidenav">
+         <div class="login-main-text">
+            <h1 id="logo">FAMA</h1>
+            <p>Sieć społecznościowa dla wielbicieli polskiego radia.</p>
+            <button onclick="location.href='/login/'" type="button" class="btn btn-dark" style="background-color: rgb(0, 0, 0);">Zaloguj się</button>
+            <button onclick="location.href='/register/'" type="button" class="btn btn-dark" style="background-color: black;">Zarejestruj się</button>
+         </div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<br>
+<center>
+<form method="post">
+    {% csrf_token %}
+    <p>Czy na pewno chcesz usunąć ten artykuł?</p>
+    <button type="submit" class="btn btn-danger">Usuń</button>
+</form>
+</center>
+<br>
+{% endblock %}

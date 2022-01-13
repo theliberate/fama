@@ -1,0 +1,21 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<center>
+<br>
+{% for kolejna_spolka in Spolka %}
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ kolejna_spolka.nazwa }}</h5>
+              <a href="/spolki/{{ kolejna_spolka.id }}/{{ kolejna_spolka.url }}/" class="btn btn-dark">Zobacz szczegóły</a>
+              <br>
+            </div>
+          </div>
+        {% endfor %}
+{% if user.is_superuser %}
+<br>
+<a href="/spolki/dodaj/" class="btn btn-dark">Dodaj spółkę</a>
+{% endif %}
+</center>
+<br>
+{% endblock %}

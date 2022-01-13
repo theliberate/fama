@@ -1,0 +1,22 @@
+{% extends 'projekt/base.html' %}
+
+{% block content %}
+<center>
+<h2 style="font-size:40px; font-family: Bison;">{{ Stacja.nazwa }}</h2>
+<article style="text-align: justify; margin-left: 20px; margin-right: 20px;">
+    Data założenia: {{ Stacja.dataZalozenia }} <br>
+    Data zakończenia działalności: {% if Stacja.dataZakonczenia is None %} N/A {% else %} Stacja.dataZakonczenia{% endif %}<br>
+    Częstotliwość: {{ Stacja.czestotliwosc }} <br>
+    Miejsce nadawania: {% for miasto in Stacja.miasto.all %}{{ miasto }} {% endfor %}<br>
+    {% if Stacja.link is not None %} Link do radia online: {{ Stacja.link }} {% endif %}<br>
+    Kategorie: {% for kategoria in Stacja.kategoria.all %} {{ kategoria }} {% endfor %}<br>
+    {% if Stacja.spolkaMediowa is not None %} Spółka mediowa: <a href="/spolki/{{Stacja.spolkaMediowa.id}}/{{Stacja.spolkaMediowa.url}}/">{{ Stacja.spolkaMediowa.nazwa }}</a> {% endif %}<br>
+
+</article>
+{% if user.is_superuser %}
+<br>
+<a href="/stacje/{{ Stacja.id }}/{{ Stacja.url }}/edytuj/" class="btn btn-dark">Edytuj</a> <a href="/stacje/{{ Stacja.id }}/{{ Stacja.url }}/usun/" class="btn btn-dark">Usuń</a>
+{% endif %}
+</center>
+<br>
+{% endblock %}

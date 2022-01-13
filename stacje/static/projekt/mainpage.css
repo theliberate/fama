@@ -1,0 +1,27 @@
+.kolorystyka {
+  color: white;
+  font-size: 70px;
+  text-align: center;
+  font-family: "Bison";
+  text-decoration: none;
+}
+
+.kolorystyka:link, .kolorystyka.kolorystyka:visited, .kolorystyka:focus, .kolorystyka:active {
+  color: white;
+  font-size: 70px;
+  text-align: center;
+  font-family: "Bison";
+  text-decoration: none;
+}
+
+.kolorystyka:hover {
+  -webkit-transform: scale(1.2);
+}
+
+footer {
+  bottom:0;
+}
+
+html, body {
+  height:100%;
+}

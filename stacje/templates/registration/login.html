@@ -1,0 +1,16 @@
+{% extends '../projekt/autoryzacjabaza.html' %}
+
+{% block title %}Logowanie{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<center>
+<h2 style="font-family: Bison; font-size:60px;">Logowanie</h2>
+<br>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-dark" style="background-color: rgb(0, 0, 0);">Zaloguj się</button>
+</form>
+</center>
+{% endblock %}
